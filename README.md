@@ -29,15 +29,17 @@ Usage -
 var jsonOperation = require('./json-read-write.js');
 ```
 
-2. Insert object in the json using - 
+2. Insert object in the json using 
 
 ```node
-var object =
+ var object =
   {
   title: "Installing Packages",
   body: "Run npm install to install the packages. "
 };
+
 jsonOperation.insertJsonObject(object);
+
 ```
 
 use the following to create a promise function to print json after inserting an object - 
@@ -62,3 +64,21 @@ insertAndPrintFunction().then(function(){
   jsonOperation.printJsonFile();
 });
  ```
+JSON File Syntax Example - (I have used the objectarray in the json-read-write.js)
+-------
+
+```json
+ {
+  "objectarray": [
+    {
+      "title": "Installing Packages",
+      "body": "Run npm install to install the packages. "
+    }
+  ]
+ }
+```
+Refer to the line in the js file - objectarray is the array name defined in the json file. 
+
+```node
+fileAsJson.objectarray.push(object); //objectarray is the array defined in your json.
+```
